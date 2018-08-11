@@ -13,8 +13,8 @@
 % if request R at WT (for machine M with duration D) is assigned to J
 job(J,M,D) :- assign((R,WT),J), window(request(R,M,D),WT).
 
-% window terms definition
-wterm(request(R,M,D)) :- R=1..requests, M=1..machines, D=1..horizon.
+% window atoms definition
+watom(request(R,M,D)) :- R=1..requests, M=1..machines, D=1..horizon.
 
 % display
 #show wstart(request(R,M,D),WT,T) : window(request(R,M,D),WT), assign((R,WT),J), start(J,T).

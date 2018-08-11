@@ -15,7 +15,7 @@
 % then request R at WT cannot be assigned
 :- window(submitted(R,WT),0), assign((R,WT),_).
 
-% new window terms definition
-wterm(  occupied(M,T)) :- M=1..machines, T=1..horizon.
-wterm(submitted(R,WT)) :- R=1..requests, WT=1-wsize..-1.
+% new window atomss definition
+watom(  occupied(M,T)) :- M=1..machines, T=1..horizon.
+watom(submitted(R,WT)) :- R=1..requests, WT=1-wsize..-1.
 

@@ -4,8 +4,8 @@ class StreamedProgramBasic:
 
         # PUBLIC
         self.base = """
-            wterm(a(1..2)).
-            all(WT) :- WT=1-wsize..0, window(A,WT) : wterm(A).
+            watom(a(1..2)).
+            all(WT) :- WT=1-wsize..0, window(A,WT) : watom(A).
             #show window/2.
             #show all/1.
         """

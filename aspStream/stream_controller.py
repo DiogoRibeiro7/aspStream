@@ -3,7 +3,7 @@ import streamed_program_basic
 import streamed_program_job
 
 externals = """
-#external window(A,WT) : WT=1-wsize..0, wterm(A).
+#external window(A,WT) : WT=1-wsize..0, watom(A).
 """
 
 def on_model(m):
@@ -12,9 +12,9 @@ def on_model(m):
 
 def set_externals(ctl, window):
     for idx, item in enumerate(window):
-        for term, value in item:
-            atom = clingo.parse_term("window("+term+",-"+str(idx)+")")
-            ctl.assign_external(atom, value)
+        for atom, value in item:
+            watom = clingo.parse_term("window("+atom+",-"+str(idx)+")")
+            ctl.assign_external(watom, value)
 
 
 class AbstractStreamedProgram:
